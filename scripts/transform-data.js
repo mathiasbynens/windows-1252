@@ -6,7 +6,7 @@ function format(object) {
 	return jsesc(object, {
 		'json': true,
 		'compact': false
-	});
+	}) + '\n';
 }
 
 function parse(source) {
