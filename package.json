@@ -1,0 +1,62 @@
+{
+	"name": "windows-1252",
+	"version": "0.1.0",
+	"description": "A robust windows-1252 encoder/decoder written in JavaScript.",
+	"homepage": "http://mths.be/windows-1252",
+	"main": "windows1252.js",
+	"keywords": [
+		"codec",
+		"decoder",
+		"encoder",
+		"legacy",
+		"ansi_x3.4-1968",
+		"ascii",
+		"cp1252",
+		"cp819",
+		"csisolatin1",
+		"ibm819",
+		"iso-8859-1",
+		"iso-ir-100",
+		"iso8859-1",
+		"iso88591",
+		"iso_8859-1",
+		"iso_8859-1:1987",
+		"l1",
+		"latin1",
+		"us-ascii",
+		"windows-1252",
+		"x-cp1252"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/windows-1252.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/windows-1252/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"windows1252.js"
+	],
+	"devDependencies": {
+		"grunt": "~0.4.4",
+		"grunt-shell": "~0.7.0",
+		"grunt-template": "~0.2.3",
+		"istanbul": "~0.2.7",
+		"jsesc": "~0.4.3",
+		"qunit-extras": "~1.1.0",
+		"qunitjs": "~1.11.0",
+		"requirejs": "~2.1.11",
+		"string.fromcodepoint": "~0.2.0"
+	}
+}
