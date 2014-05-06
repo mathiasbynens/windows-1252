@@ -1,6 +1,6 @@
 # windows-1252 [![Build status](https://travis-ci.org/mathiasbynens/windows-1252.svg?branch=master)](https://travis-ci.org/mathiasbynens/windows-1252) [![Dependency status](https://gemnasium.com/mathiasbynens/windows-1252.svg)](https://gemnasium.com/mathiasbynens/windows-1252)
 
-_windows-1252_ is robust JavaScript implementation of [the windows-1252 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#windows-1252).
+_windows-1252_ is a robust JavaScript implementation of [the windows-1252 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#windows-1252).
 
 This encoding is known under the following names: ansi_x3.4-1968, ascii, cp1252, cp819, csisolatin1, ibm819, iso-8859-1, iso-ir-100, iso8859-1, iso88591, iso_8859-1, iso_8859-1:1987, l1, latin1, us-ascii, windows-1252, x-cp1252, and x-cp1252.
 
