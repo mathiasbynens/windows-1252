@@ -48,6 +48,12 @@
 		"LICENSE-MIT.txt",
 		"windows1252.js"
 	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js"
+	},
 	"devDependencies": {
 		"grunt": "~0.4.4",
 		"grunt-shell": "~0.7.0",
