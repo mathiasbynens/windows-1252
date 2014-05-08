@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 					}
 				},
 				'files': {
-					'windows1252.js': ['src/windows1252.js']
+					'windows-1252.js': ['src/windows-1252.js']
 				}
 			},
 			'build-tests': {
