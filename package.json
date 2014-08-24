@@ -2,7 +2,7 @@
 	"name": "windows-1252",
 	"version": "0.1.2",
 	"description": "A robust windows-1252 encoder/decoder written in JavaScript.",
-	"homepage": "http://mths.be/windows-1252",
+	"homepage": "https://mths.be/windows-1252",
 	"main": "windows-1252.js",
 	"keywords": [
 		"codec",
@@ -30,43 +30,33 @@
 		"windows-1252",
 		"x-cp1252"
 	],
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://mths.be/mit"
-		}
-	],
+	"license": "MIT",
 	"author": {
 		"name": "Mathias Bynens",
-		"url": "http://mathiasbynens.be/"
+		"url": "https://mathiasbynens.be/"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mathiasbynens/windows-1252.git"
 	},
-	"bugs": {
-		"url": "https://github.com/mathiasbynens/windows-1252/issues"
-	},
+	"bugs": "https://github.com/mathiasbynens/windows-1252/issues",
 	"files": [
 		"LICENSE-MIT.txt",
 		"windows-1252.js"
 	],
-	"directories": {
-		"test": "tests"
-	},
 	"scripts": {
 		"test": "node tests/tests.js"
 	},
 	"devDependencies": {
-		"coveralls": "^2.10.0",
+		"coveralls": "^2.11.1",
 		"grunt": "^0.4.5",
-		"grunt-shell": "^0.7.0",
+		"grunt-shell": "^1.1.1",
 		"grunt-template": "^0.2.3",
-		"istanbul": "^0.2.10",
-		"jsesc": "^0.4.3",
+		"istanbul": "^0.3.0",
+		"jsesc": "^0.5.0",
 		"qunit-extras": "^1.2.0",
 		"qunitjs": "~1.11.0",
-		"requirejs": "^2.1.11",
-		"string.fromcodepoint": "^0.2.0"
+		"requirejs": "^2.1.14",
+		"string.fromcodepoint": "^0.2.1"
 	}
 }
