@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				'failOnError': true
 			},
 			'fetch': {
-				'command': 'curl http://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt'
+				'command': 'curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt'
 			},
 			'transform-data': {
 				'command': 'node scripts/transform-data.js'
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 				'command': 'istanbul cover --report "html" --verbose --dir "coverage" "tests/tests.js"'
 			},
 			'cover-coveralls': {
-				'command': 'istanbul cover --verbose --dir "coverage" "tests/tests.js" && cat coverage/lcov.info | coveralls; rm -rf coverage/lcov*'
+				'command': 'istanbul cover --verbose --dir "coverage" "tests/tests.js" && coveralls < coverage/lcov.info; rm -rf coverage/lcov*'
 			},
 			'test-narwhal': {
 				'command': 'echo "Testing in Narwhal..."; export NARWHAL_OPTIMIZATION=-1; narwhal "tests/tests.js"'

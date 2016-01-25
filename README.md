@@ -1,6 +1,6 @@
 # windows-1252 [![Build status](https://travis-ci.org/mathiasbynens/windows-1252.svg?branch=master)](https://travis-ci.org/mathiasbynens/windows-1252) [![Code coverage status](https://coveralls.io/repos/mathiasbynens/windows-1252/badge.svg)](https://coveralls.io/r/mathiasbynens/windows-1252) [![Dependency status](https://gemnasium.com/mathiasbynens/windows-1252.svg)](https://gemnasium.com/mathiasbynens/windows-1252)
 
-_windows-1252_ is a robust JavaScript implementation of [the windows-1252 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#windows-1252).
+_windows-1252_ is a robust JavaScript implementation of [the windows-1252 character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#windows-1252).
 
 This encoding is known under the following names: ansi_x3.4-1968, ascii, cp1252, cp819, csisolatin1, ibm819, iso-8859-1, iso-ir-100, iso8859-1, iso88591, iso_8859-1, iso_8859-1:1987, l1, latin1, us-ascii, windows-1252, and x-cp1252.
 
@@ -36,7 +36,7 @@ In [Node.js](https://nodejs.org/), [io.js](https://iojs.org/), [Narwhal](http://
 var windows1252 = require('windows-1252');
 ```
 
-In [Rhino](http://www.mozilla.org/rhino/):
+In [Rhino](https://www.mozilla.org/rhino/):
 
 ```js
 load('windows1252.js');
@@ -66,7 +66,7 @@ A string representing the semantic version number.
 
 ### `windows1252.labels`
 
-An array of strings, each representing a [label](http://encoding.spec.whatwg.org/#label) for this encoding.
+An array of strings, each representing a [label](https://encoding.spec.whatwg.org/#label) for this encoding.
 
 ### `windows1252.encode(input, options)`
 
@@ -76,7 +76,7 @@ This function takes a plain text string (the `input` parameter) and encodes it a
 var encodedData = windows1252.encode(text);
 ```
 
-The optional `options` object and its `mode` property can be used to set the [error mode](http://encoding.spec.whatwg.org/#error-mode). For encoding, the error mode can be `'fatal'` (the default) or `'html'`.
+The optional `options` object and its `mode` property can be used to set the [error mode](https://encoding.spec.whatwg.org/#error-mode). For encoding, the error mode can be `'fatal'` (the default) or `'html'`.
 
 ```js
 var encodedData = windows1252.encode(text, {
@@ -94,7 +94,7 @@ This function takes a byte string (the `input` parameter) and decodes it accordi
 var text = windows1252.decode(encodedData);
 ```
 
-The optional `options` object and its `mode` property can be used to set the [error mode](http://encoding.spec.whatwg.org/#error-mode). For decoding, the error mode can be `'replacement'` (the default) or `'fatal'`.
+The optional `options` object and its `mode` property can be used to set the [error mode](https://encoding.spec.whatwg.org/#error-mode). For decoding, the error mode can be `'replacement'` (the default) or `'fatal'`.
 
 ```js
 var text = windows1252.decode(encodedData, {
@@ -106,7 +106,7 @@ var text = windows1252.decode(encodedData, {
 
 ## Support
 
-_windows-1252_ is designed to work in at least Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, Rhino 1.7RC4, as well as old and modern versions of Chrome, Firefox, Safari, Opera, and Internet Explorer.
+_windows-1252_ is designed to work in at least Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, Rhino 1.7RC4, as well as old and modern versions of Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer.
 
 ## Unit tests & code coverage
 

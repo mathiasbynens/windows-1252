@@ -24,7 +24,7 @@
 	var INDEX_BY_CODE_POINT = <%= indexByCodePoint %>;
 	var INDEX_BY_POINTER = <%= indexByPointer %>;
 
-	// http://encoding.spec.whatwg.org/#error-mode
+	// https://encoding.spec.whatwg.org/#error-mode
 	var error = function(codePoint, mode) {
 		if (mode == 'replacement') {
 			return '\uFFFD';
@@ -36,7 +36,7 @@
 		throw Error();
 	};
 
-	// http://encoding.spec.whatwg.org/#single-byte-decoder
+	// https://encoding.spec.whatwg.org/#single-byte-decoder
 	var decode = function(input, options) {
 		var mode;
 		if (options && options.mode) {
@@ -74,7 +74,7 @@
 		return result;
 	};
 
-	// http://encoding.spec.whatwg.org/#single-byte-encoder
+	// https://encoding.spec.whatwg.org/#single-byte-encoder
 	var encode = function(input, options) {
 		var mode;
 		if (options && options.mode) {
