@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 				'command': 'curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt'
 			},
 			'transform-data': {
-				'command': 'node scripts/transform-data.js'
+				'command': 'npm run build'
 			},
 			'cover-html': {
 				'command': 'istanbul cover --report "html" --verbose --dir "coverage" "tests/tests.js"'
@@ -72,7 +72,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('cover', 'shell:cover-html');
 	grunt.registerTask('ci', [
-		'template',
 		'shell:test-narwhal',
 		'shell:test-phantomjs',
 		'shell:test-rhino',

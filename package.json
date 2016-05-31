@@ -45,7 +45,8 @@
 		"windows-1252.js"
 	],
 	"scripts": {
-		"test": "node tests/tests.js"
+		"test": "node tests/tests.js",
+		"build": "node scripts/transform-data.js"
 	},
 	"devDependencies": {
 		"coveralls": "^2.11.6",
@@ -53,7 +54,7 @@
 		"grunt-shell": "^1.1.2",
 		"grunt-template": "^0.2.3",
 		"istanbul": "^0.4.2",
-		"jsesc": "^0.5.0",
+		"jsesc": "^2.1.0",
 		"qunit-extras": "^1.4.5",
 		"qunitjs": "~1.11.0",
 		"requirejs": "^2.1.22",

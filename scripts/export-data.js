@@ -8,7 +8,7 @@ function readJSON(path) {
 module.exports = {
 	'labels': jsesc(readJSON('data/labels.json'), {
 		'compact': false,
-		'__indent__': '\t\t'
+		'indentLevel': 2
 	}),
 	'encoded': jsesc(readJSON('data/encoded.json'), { 'wrap': true }),
 	'decoded': jsesc(readJSON('data/decoded.json'), { 'wrap': true }),
