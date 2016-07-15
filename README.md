@@ -12,18 +12,6 @@ Via [npm](https://www.npmjs.com/):
 npm install windows-1252
 ```
 
-Via [Bower](http://bower.io/):
-
-```bash
-bower install windows-1252
-```
-
-Via [Component](https://github.com/component/component):
-
-```bash
-component install mathiasbynens/windows-1252
-```
-
 In a browser:
 
 ```html
@@ -73,13 +61,13 @@ An array of strings, each representing a [label](https://encoding.spec.whatwg.or
 This function takes a plain text string (the `input` parameter) and encodes it according to windows-1252. The return value is a ‘byte string’, i.e. a string of which each item represents an octet as per windows-1252.
 
 ```js
-var encodedData = windows1252.encode(text);
+const encodedData = windows1252.encode(text);
 ```
 
 The optional `options` object and its `mode` property can be used to set the [error mode](https://encoding.spec.whatwg.org/#error-mode). For encoding, the error mode can be `'fatal'` (the default) or `'html'`.
 
 ```js
-var encodedData = windows1252.encode(text, {
+const encodedData = windows1252.encode(text, {
   'mode': 'html'
 });
 // If `text` contains a symbol that cannot be represented in windows-1252,
@@ -91,13 +79,13 @@ var encodedData = windows1252.encode(text, {
 This function takes a byte string (the `input` parameter) and decodes it according to windows-1252.
 
 ```js
-var text = windows1252.decode(encodedData);
+const text = windows1252.decode(encodedData);
 ```
 
 The optional `options` object and its `mode` property can be used to set the [error mode](https://encoding.spec.whatwg.org/#error-mode). For decoding, the error mode can be `'replacement'` (the default) or `'fatal'`.
 
 ```js
-var text = windows1252.decode(encodedData, {
+const text = windows1252.decode(encodedData, {
   'mode': 'fatal'
 });
 // If `encodedData` contains an invalid byte for the windows-1252 encoding,
@@ -109,14 +97,6 @@ For decoding a buffer (e.g. from `fs.readFile`) use `buffer.toString('binary')` 
 ## Support
 
 _windows-1252_ is designed to work in at least Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, Rhino 1.7RC4, as well as old and modern versions of Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer.
-
-## Unit tests & code coverage
-
-After cloning this repository, run `npm install` to install the dependencies needed for development and testing. You may want to install Istanbul _globally_ using `npm install istanbul -g`.
-
-Once that’s done, you can run the unit tests in Node using `npm test` or `node tests/tests.js`. To run the tests in Rhino, Ringo, Narwhal, and web browsers as well, use `grunt test`.
-
-To generate the code coverage report, use `grunt cover`.
 
 ## Notes
 

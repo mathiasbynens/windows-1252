@@ -7,9 +7,6 @@ module.exports = function(grunt) {
 				'stderr': true,
 				'failOnError': true
 			},
-			'fetch': {
-				'command': 'curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt'
-			},
 			'transform-data': {
 				'command': 'npm run build'
 			},
@@ -81,11 +78,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('test', [
 		'ci',
 		'shell:test-browser'
-	]);
-
-	grunt.registerTask('fetch', [
-		'shell:fetch',
-		'build'
 	]);
 
 	grunt.registerTask('build', [
