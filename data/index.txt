@@ -1,22 +1,19 @@
 # Any copyright is dedicated to the Public Domain.
-# https://creativecommons.org/publicdomain/zero/1.0/
+# http://creativecommons.org/publicdomain/zero/1.0/
 #
-# For details on index index-windows-1252.txt see the Encoding Standard
+# For details on index-windows-1252.txt see the Encoding Standard
 # https://encoding.spec.whatwg.org/
-#
-# Identifier: e56d49d9176e9a412283cf29ac9bd613f5620462f2a080a84eceaf974cfa18b7
-# Date: 2016-01-20
 
-  0	0x20AC	€ (EURO SIGN)
-  1	0x0081	 (<control>)
-  2	0x201A	‚ (SINGLE LOW-9 QUOTATION MARK)
-  3	0x0192	ƒ (LATIN SMALL LETTER F WITH HOOK)
-  4	0x201E	„ (DOUBLE LOW-9 QUOTATION MARK)
-  5	0x2026	… (HORIZONTAL ELLIPSIS)
-  6	0x2020	† (DAGGER)
-  7	0x2021	‡ (DOUBLE DAGGER)
-  8	0x02C6	ˆ (MODIFIER LETTER CIRCUMFLEX ACCENT)
-  9	0x2030	‰ (PER MILLE SIGN)
+	0	0x20AC	€ (EURO SIGN)
+	1	0x0081	 (<control>)
+	2	0x201A	‚ (SINGLE LOW-9 QUOTATION MARK)
+	3	0x0192	ƒ (LATIN SMALL LETTER F WITH HOOK)
+	4	0x201E	„ (DOUBLE LOW-9 QUOTATION MARK)
+	5	0x2026	… (HORIZONTAL ELLIPSIS)
+	6	0x2020	† (DAGGER)
+	7	0x2021	‡ (DOUBLE DAGGER)
+	8	0x02C6	ˆ (MODIFIER LETTER CIRCUMFLEX ACCENT)
+	9	0x2030	‰ (PER MILLE SIGN)
  10	0x0160	Š (LATIN CAPITAL LETTER S WITH CARON)
  11	0x2039	‹ (SINGLE LEFT-POINTING ANGLE QUOTATION MARK)
  12	0x0152	Œ (LATIN CAPITAL LIGATURE OE)
