@@ -1,6 +1,6 @@
 {
 	"name": "windows-1252",
-	"version": "0.1.2",
+	"version": "1.0.0",
 	"description": "A robust windows-1252 encoder/decoder written in JavaScript.",
 	"homepage": "https://mths.be/windows-1252",
 	"main": "windows-1252.js",
