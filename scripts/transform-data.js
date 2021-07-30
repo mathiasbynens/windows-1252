@@ -56,17 +56,17 @@ fs.writeFileSync(
 );
 
 // tests/tests.src.js → tests/tests.js
-const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.js', 'utf8');
+const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.mjs', 'utf8');
 const createTest = template(TEST_TEMPLATE, {
 	interpolate: /<\%=([\s\S]+?)%\>/g,
 });
 const testCode = createTest(require('./export-data.js'));
-fs.writeFileSync('./tests/tests.js', testCode);
+fs.writeFileSync('./tests/tests.mjs', testCode);
 
-// src/windows-1252.src.js -> windows-1252.js
-const LIB_TEMPLATE = fs.readFileSync('./src/windows-1252.src.js', 'utf8');
+// src/windows-1252.src.mjs -> windows-1252.mjs
+const LIB_TEMPLATE = fs.readFileSync('./src/windows-1252.src.mjs', 'utf8');
 const createLib = template(LIB_TEMPLATE, {
 	interpolate: /<\%=([\s\S]+?)%\>/g,
 });
 const libCode = createLib(require('./export-data.js'));
-fs.writeFileSync('./windows-1252.js', libCode);
+fs.writeFileSync('./windows-1252.mjs', libCode);
