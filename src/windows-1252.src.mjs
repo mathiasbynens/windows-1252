@@ -6,12 +6,17 @@ const INDEX_BY_CODE_POINT = <%= indexByCodePoint %>;
 const INDEX_BY_POINTER = <%= indexByPointer %>;
 
 // https://encoding.spec.whatwg.org/#error-mode
-const error = (codePoint, mode) => {
-	if (mode == 'replacement') {
+const decodingError = (mode) => {
+	if (mode === 'replacement') {
 		return '\uFFFD';
 	}
-	if (codePoint !== null && mode === 'html') {
-		return '&#' + codePoint + ';';
+	// Else, `mode == 'fatal'`.
+	throw new Error();
+};
+
+const encodingError = (mode) => {
+	if (mode === 'replacement') {
+		return 0xFFFD;
 	}
 	// Else, `mode == 'fatal'`.
 	throw new Error();
@@ -28,24 +33,36 @@ export const decode = (input, options) => {
 	if (mode !== 'replacement' && mode !== 'fatal') {
 		mode = 'replacement';
 	}
+
+	const length = input.length;
+
+	// Support byte strings as input.
+	if (typeof input === 'string') {
+		const bytes = new Uint16Array(length);
+		for (let index = 0; index < length; index++) {
+			bytes[index] = input.charCodeAt(index);
+		}
+		input = bytes;
+	}
+
 	const buffer = [];
-	for (let index = 0; index < input.length; index++) {
-		const byteValue = input.charCodeAt(index);
-		// “If `byte` is in the range `0x00` to `0x7F`, return a code point whose
-		// value is `byte`.”
+	for (let index = 0; index < length; index++) {
+		const byteValue = input[index];
+		// “If `byte` is an ASCII byte, return a code point whose value is
+		// `byte`.”
 		if (0x00 <= byteValue && byteValue <= 0x7F) {
 			buffer.push(stringFromCharCode(byteValue));
 			continue;
 		}
 		// “Let `code point` be the index code point for `byte − 0x80` in index
-		// `single-byte`.”
+		// single-byte.”
 		const pointer = byteValue - 0x80;
 		if (INDEX_BY_POINTER.has(pointer)) {
 			// “Return a code point whose value is `code point`.”
 			buffer.push(INDEX_BY_POINTER.get(pointer));
 		} else {
 			// “If `code point` is `null`, return `error`.”
-			buffer.push(error(null, mode));
+			buffer.push(decodingError(mode));
 		}
 	}
 	const result = buffer.join('');
@@ -63,27 +80,27 @@ export const encode = (input, options) => {
 	if (mode !== 'fatal' && mode !== 'html') {
 		mode = 'fatal';
 	}
-	const buffer = [];
-	for (let index = 0; index < input.length; index++) {
+	const length = input.length;
+	const result = new Uint16Array(length);
+	for (let index = 0; index < length; index++) {
 		const codePoint = input.charCodeAt(index);
-		// “If `code point` is in the range U+0000 to U+007F, return a byte whose
+		// “If `code point` is an ASCII code point, return a byte whose
 		// value is `code point`.”
 		if (0x00 <= codePoint && codePoint <= 0x7F) {
-			buffer.push(stringFromCharCode(codePoint));
+			result[index] = codePoint;
 			continue;
 		}
 		// “Let `pointer` be the index pointer for `code point` in index
-		// `single-byte`.”
+		// single-byte.”
 		if (INDEX_BY_CODE_POINT.has(codePoint)) {
 			const pointer = INDEX_BY_CODE_POINT.get(codePoint);
 			// “Return a byte whose value is `pointer + 0x80`.”
-			buffer.push(stringFromCharCode(pointer + 0x80));
+			result[index] = pointer + 0x80;
 		} else {
 			// “If `pointer` is `null`, return `error` with `code point`.”
-			buffer.push(error(codePoint, mode));
+			result[index] = encodingError(mode);
 		}
 	}
-	const result = buffer.join('');
 	return result;
 };
 

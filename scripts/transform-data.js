@@ -13,7 +13,7 @@ function parse(source) {
 	const indexByCodePoint = {};
 	const indexByPointer = {};
 	let decoded = '';
-	let encoded = '';
+	const encoded = [];
 	var lines = source.split('\n');
 	for (const line of lines) {
 		const data = line.trim().split('\t');
@@ -24,7 +24,7 @@ function parse(source) {
 		const codePoint = Number(data[1]);
 		const symbol = String.fromCodePoint(codePoint);
 		decoded += symbol;
-		encoded += String.fromCodePoint(pointer + 0x80);
+		encoded.push(pointer + 0x80);
 		indexByCodePoint[codePoint] = pointer;
 		indexByPointer[pointer] = symbol;
 	}

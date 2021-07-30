@@ -15,7 +15,7 @@ function objectToMap(object) {
 
 module.exports = {
 	labels: jsesc(readJSON('data/labels.json'), { compact: false }),
-	encoded: jsesc(readJSON('data/encoded.json'), { wrap: true }),
+	encoded: jsesc(readJSON('data/encoded.json'), { wrap: true, numbers: 'hexadecimal' }),
 	decoded: jsesc(readJSON('data/decoded.json'), { wrap: true }),
 	indexByCodePoint: jsesc(objectToMap(readJSON('data/index-by-code-point.json')), { compact: false }),
 	indexByPointer: jsesc(objectToMap(readJSON('data/index-by-pointer.json')), { compact: false }),
