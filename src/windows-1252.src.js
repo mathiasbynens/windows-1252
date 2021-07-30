@@ -1,5 +1,5 @@
 /*! https://mths.be/windows-1252 v<%= version %> by @mathias | MIT license */
-;(function(root) {
+;(function() {
 
 	var object = {};
 	var hasOwnProperty = object.hasOwnProperty;
@@ -100,9 +100,9 @@
 		encode: encode,
 		decode: decode,
 		labels: <%= labels %>,
-		version: '<%= version %>'
+		version: '<%= version %>',
 	};
 
 	module.exports = windows1252;
 
-}(this));
+}());
