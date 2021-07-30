@@ -47,18 +47,14 @@
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
-		"test": "node tests/tests.js"
+		"test": "node tests/tests.js",
+		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
 	},
 	"devDependencies": {
-		"coveralls": "^2.11.6",
 		"grunt": "^0.4.5",
 		"grunt-shell": "^1.1.2",
 		"grunt-template": "^0.2.3",
 		"istanbul": "^0.4.2",
-		"jsesc": "^2.1.0",
-		"qunit-extras": "^1.4.5",
-		"qunitjs": "~1.11.0",
-		"requirejs": "^2.1.22",
-		"string.fromcodepoint": "^0.2.1"
+		"jsesc": "^2.1.0"
 	}
 }
