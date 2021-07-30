@@ -29,13 +29,13 @@
 		if (mode !== 'replacement' && mode !== 'fatal') {
 			mode = 'replacement';
 		}
-		let result = '';
+		const buffer = [];
 		for (let index = 0; index < input.length; index++) {
 			const byteValue = input.charCodeAt(index);
 			// “If `byte` is in the range `0x00` to `0x7F`, return a code point whose
 			// value is `byte`.”
 			if (byteValue >= 0x00 && byteValue <= 0x7F) {
-				result += stringFromCharCode(byteValue);
+				buffer.push(stringFromCharCode(byteValue));
 				continue;
 			}
 			// “Let `code point` be the index code point for `byte − 0x80` in index
@@ -43,12 +43,13 @@
 			const pointer = byteValue - 0x80;
 			if (INDEX_BY_POINTER.has(pointer)) {
 				// “Return a code point whose value is `code point`.”
-				result += INDEX_BY_POINTER.get(pointer);
+				buffer.push(INDEX_BY_POINTER.get(pointer));
 			} else {
 				// “If `code point` is `null`, return `error`.”
-				result += error(null, mode);
+				buffer.push(error(null, mode));
 			}
 		}
+		const result = buffer.join('');
 		return result;
 	};
 
@@ -63,13 +64,13 @@
 		if (mode !== 'fatal' && mode !== 'html') {
 			mode = 'fatal';
 		}
-		let result = '';
+		const buffer = [];
 		for (let index = 0; index < input.length; index++) {
 			const codePoint = input.charCodeAt(index);
 			// “If `code point` is in the range U+0000 to U+007F, return a byte whose
 			// value is `code point`.”
 			if (codePoint >= 0x00 && codePoint <= 0x7F) {
-				result += stringFromCharCode(codePoint);
+				buffer.push(stringFromCharCode(codePoint));
 				continue;
 			}
 			// “Let `pointer` be the index pointer for `code point` in index
@@ -77,12 +78,13 @@
 			if (INDEX_BY_CODE_POINT.has(codePoint)) {
 				const pointer = INDEX_BY_CODE_POINT.get(codePoint);
 				// “Return a byte whose value is `pointer + 0x80`.”
-				result += stringFromCharCode(pointer + 0x80);
+				buffer.push(stringFromCharCode(pointer + 0x80));
 			} else {
 				// “If `pointer` is `null`, return `error` with `code point`.”
-				result += error(codePoint, mode);
+				buffer.push(error(codePoint, mode));
 			}
 		}
+		const result = buffer.join('');
 		return result;
 	};
 
