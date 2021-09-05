@@ -75,9 +75,8 @@ export const encode = (input, options) => {
 	if (options && options.mode) {
 		mode = options.mode.toLowerCase();
 	}
-	// “An error mode […] is either `fatal` (default) or `HTML` for an
-	// encoder.”
-	if (mode !== 'fatal' && mode !== 'html') {
+	// Support `fatal` (default) and `replacement` error modes.
+	if (mode !== 'fatal' && mode !== 'replacement') {
 		mode = 'fatal';
 	}
 	const length = input.length;
