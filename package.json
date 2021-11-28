@@ -42,8 +42,10 @@
 	"bugs": "https://github.com/mathiasbynens/windows-1252/issues",
 	"files": [
 		"LICENSE-MIT.txt",
-		"windows-1252.mjs"
+		"windows-1252.mjs",
+		"windows-1252.d.ts"
 	],
+	"types": "windows-1252.d.ts",
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-windows-1252.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
