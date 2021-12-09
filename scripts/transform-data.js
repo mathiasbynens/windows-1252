@@ -55,18 +55,24 @@ fs.writeFileSync(
 	format(result.encoded)
 );
 
+const TEMPLATE_OPTIONS = {
+	interpolate: /<\%=([\s\S]+?)%\>/g,
+};
+
 // tests/tests.src.js → tests/tests.js
 const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.mjs', 'utf8');
-const createTest = template(TEST_TEMPLATE, {
-	interpolate: /<\%=([\s\S]+?)%\>/g,
-});
+const createTest = template(TEST_TEMPLATE, TEMPLATE_OPTIONS);
 const testCode = createTest(require('./export-data.js'));
 fs.writeFileSync('./tests/tests.mjs', testCode);
 
-// src/windows-1252.src.mjs -> windows-1252.mjs
+// src/windows-1252.src.mjs → windows-1252.mjs
 const LIB_TEMPLATE = fs.readFileSync('./src/windows-1252.src.mjs', 'utf8');
-const createLib = template(LIB_TEMPLATE, {
-	interpolate: /<\%=([\s\S]+?)%\>/g,
-});
+const createLib = template(LIB_TEMPLATE, TEMPLATE_OPTIONS);
 const libCode = createLib(require('./export-data.js'));
 fs.writeFileSync('./windows-1252.mjs', libCode);
+
+// src/windows-1252.d.ts → windows-1252.d.ts
+const TYPES_TEMPLATE = fs.readFileSync('./src/windows-1252.d.ts', 'utf8');
+const createTypes = template(TYPES_TEMPLATE, TEMPLATE_OPTIONS);
+const typesCode = createTypes(require('./export-data.js'));
+fs.writeFileSync('./windows-1252.d.ts', typesCode);
