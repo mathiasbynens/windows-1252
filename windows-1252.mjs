@@ -1,4 +1,4 @@
-/*! https://mths.be/windows-1252 v3.0.3 by @mathias | MIT license */
+/*! https://mths.be/windows-1252 v3.0.4 by @mathias | MIT license */
 
 const stringFromCharCode = String.fromCharCode;
 
