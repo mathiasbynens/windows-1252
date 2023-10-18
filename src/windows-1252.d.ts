@@ -14,5 +14,5 @@ declare module 'windows-1252' {
     buffer: Uint16Array | Uint8Array | Buffer | string,
     options?: DecodeOptions
   ): string;
-  export type labels = string[];
+  export const labels: string[];
 }
